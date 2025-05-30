@@ -62,14 +62,16 @@ async function runAutomation() {
         console.log('Iniciando navegador...');
         // Configuração para rodar no Render.com
         browser = await chromium.launch({
-            headless: true,
-            args: [
-                '--disable-dev-shm-usage',
-                '--disable-setuid-sandbox',
-                '--no-sandbox',
-                '--disable-gpu'
-            ]
-        });
+    channel: 'chromium',
+    headless: true,
+    args: [
+        '--disable-dev-shm-usage',
+        '--disable-setuid-sandbox',
+        '--no-sandbox',
+        '--disable-gpu'
+    ]
+});
+
         console.log('Navegador iniciado com sucesso!');
 
         const context = await browser.newContext({
