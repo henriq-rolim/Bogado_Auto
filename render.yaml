@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: travian-automation
+    env: node
+    buildCommand: npm install && npx playwright install chromium --with-deps
+    startCommand: npm start
+    envVars:
+      - key: PORT
+        value: 3000
